@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maafin Aku Ya ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card {
+    background: rgba(255,255,255,0.9);
+    padding: 35px 25px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    animation: muncul 1.5s ease;
+    z-index: 2;
+}
+
+h1 {
+    color: #ff4d6d;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.love {
+    font-size: 65px;
+    animation: detak 1s infinite alternate;
+}
+
+button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff1744;
+    transform: scale(1.05);
+}
+
+#surat {
+    display: none;
+    margin-top: 20px;
+    animation: muncul 1s ease;
+}
+
+.heart {
+    position: fixed;
+    top: -30px;
+    color: #ff1744;
+    animation: jatuh linear forwards;
+    pointer-events: none;
+}
+
+@keyframes jatuh {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes detak {
+    to { transform: scale(1.2); }
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="love">❤️</div>
+
+    <h1>Maafin Aku Ya 🥺</h1>
+
+    <p>
+        Aku punya sesuatu yang ingin
+        aku sampaikan ke kamu...
+    </p>
+
+    <button onclick="bukaSurat()">
+        Klik di sini 💌
+    </button>
+
+    <div id="surat">
+        <h2 style="color:#ff4d6d">
+            Untuk Kamu ❤️
+        </h2>
+
+        <p>
+            Hai kamu...
+            <br><br>
+            Aku mau minta maaf atas semua
+            kesalahan yang pernah aku buat.
+            Aku sadar mungkin sikap dan
+            perkataanku pernah bikin kamu
+            kecewa atau sedih.
+            <br><br>
+            Aku nggak mau mencari alasan
+            untuk membenarkan kesalahanku.
+            Aku cuma ingin belajar menjadi
+            seseorang yang lebih baik.
+            <br><br>
+            Terima kasih sudah mau
+            membaca pesan kecil ini.
+            Aku menghargai perasaanmu,
+            dan aku paham kalau kamu
+            butuh waktu.
+            <br><br>
+            Maaf yaa... ❤️
+        </p>
+
+        <h3 style="color:#ff4d6d">
+            From someone who cares 💗
+        </h3>
+    </div>
+
+</div>
+
+<script>
+function bukaSurat() {
+    document.getElementById("surat").style.display = "block";
+    document.querySelector("button").style.display = "none";
+}
+
+function buatHati() {
+    const hati = document.createElement("div");
+    hati.className = "heart";
+    hati.innerHTML = "❤️";
+
+    hati.style.left = Math.random() * 100 + "vw";
+    hati.style.fontSize = (Math.random() * 20 + 10) + "px";
+    hati.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+    document.body.appendChild(hati);
+
+    setTimeout(() => {
+        hati.remove();
+    }, 6000);
+}
+
+setInterval(buatHati, 350);
+</script>
+
+</body>
+</html>
